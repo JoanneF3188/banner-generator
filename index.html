@@ -1,18 +1,126 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>jQuery Template</title>
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script>
-       $(function(){
-         
-         
-       }
-       ); 
-    </script>
-  </head>
-  <body>
-      
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Template</title>
+  <link href='https://fonts.googleapis.com/css?family=Caveat+Brush' rel='stylesheet' type='text/css'>
+  <!-- font-family: 'Caveat Brush', cursive;-->
+  <link href='https://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Germania+One' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Concert+One' rel='stylesheet' type='text/css'>
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script>
+    $(function() {
+      $('button').click(function() {
+        var name = $('#name').val();
+        var color = $('#color').val();
+        var adj = $('#adj').val();
+        var design = $('#design').val();
+        alert(design);
+
+        $('#banner').css('background-image', design);
+        $('h1').html(name);
+        $('p').html('I am ' + adj);
+        $('p, h1').css('color', color);
+      });
+    });
+  </script>
+  <style>
+    #banner {
+      width: auto;
+      height: auto;
+    }
+    
+    #title {
+      font-size: 30px;
+      font-family: 'Concert One', cursive;
+    }
+    
+    #title2 {
+      font-size: 20px;
+      font-family: 'Patrick Hand SC', cursive;
+      ;
+    }
+    
+    #title3 {
+      font-size: 20px;
+      font-family: 'Patrick Hand SC', cursive;
+    }
+    
+    #title4 {
+      font-size: 20px;
+      font-family: 'Patrick Hand SC', cursive;
+    }
+    
+    #name {
+      font-family: 'Concert One', cursive;
+      font-size: 15px;
+      width: 8em;
+    }
+    
+    #color {
+      font-family: 'Patrick Hand SC', cursive;
+      font-size: 20px;
+      width: 10em;
+      height: 23px;
+    }
+    
+    #adj {
+      font-family: 'Patrick Hand SC', cursive;
+      font-size: 20px;
+      width: 5em;
+      height: 23px;
+    }
+    
+    #questions {
+      width: 500px;
+      padding: 13px;
+      border: 3px solid red;
+    }
+    
+    button {
+      margin-top: 13px;
+    }
+    
+    h1 {
+      font-size: 200px;
+      text-align: center;
+    }
+    
+    p {
+      font-size: 50px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="banner">
+    <div id="questions">
+      <span id="title">Name:</span>
+      <input id="name" type="text" placeholder="Your name here">
+      <br>
+      <br> <span id="title2">Choose the background of your choice:</span>
+      <select name="design">
+        <option value="hi"></option>
+        <option value="blue-sky.jpg">Blue Sky</option>
+        <option value="dog.jpg">Dog</option>
+        <option value="ocean.png">Ocean</option>
+        <option value="red.jpg">Red</option>
+      </select>
+      <br>
+      <br> <span id="title3">Choose a color: </span>
+      <input id="color" type="text" placeholder="red, blue, cyan, lightblue">
+      <br>
+      <br>
+      <span id="title4">One word that describes you:</span>
+      <input id="adj" type="text" placeholder="adjective">
+    </div>
+    <button>Create!</button>
+    <h1 id="Name"></h1>
+    <p></p>
+  </div>
+</body>
+
 </html>
