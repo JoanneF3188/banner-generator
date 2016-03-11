@@ -4,24 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <title>Banner Generator</title>
+  <!--Google Fonts-->
   <link href='https://fonts.googleapis.com/css?family=Caveat+Brush' rel='stylesheet' type='text/css'>
-  <!-- font-family: 'Caveat Brush', cursive;-->
   <link href='https://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Germania+One' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Concert+One' rel='stylesheet' type='text/css'>
   <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
   <script>
     $(function() {
-      $('button').click(function() {
+      $('button').click(function() { //when the button is clicked
+        //grabs the value of the user's inputs and set it as a variable
         var name = $('#name').val();
         var color = $('#color').val();
         var adj = $('#adj').val();
         var design = $('#design').val();
-        $('#questions, button').hide(500);
-        $('#banner').css('background-image', 'url(' + design + ')');
-        $('#Name').html(name);
-        $('#slogan').html('I am ' + adj + "!");
-        $('#slogan, #Name').css('color', color);
+
+        $('#questions, button').hide(500); // after the button is clicked, it hides the question inputs and the button
+        $('#banner').css('background-image', 'url(' + design + ')'); //sets the background of the whole page to the chosen background of the user
+        $('#Name').html(name); //replaces the empty h1 tag in the html with the name of the user
+        $('#slogan').html('I am ' + adj + "!"); //replaces empty p tag in the html with the sentence and the given adjective from the user
+        $('#slogan, #Name').css('color', color); // Sets the color of the words to the given color from the user
       });
     });
   </script>
@@ -122,27 +124,28 @@
   <div id="banner">
     <div id="questions">
       <span id="title">Name:</span>
-      <input id="name" type="text" placeholder="Your name here">
+      <input id="name" type="text" placeholder="Your name here"> <!--creates input box-->
       <br>
       <br> <span id="title2">Choose the background of your choice:</span>
+      <!--creates drop-down menu-->
       <select id="design" name="design">
         <option value="blank"></option>
         <option value="blue-sky.jpg">Blue Sky</option>
         <option value="dog.jpg">Dog</option>
-        <option value="ocean.png">Ocean</option> /option>
+        <option value="ocean.png">Ocean</option>
         <option value="red.jpg">Red</option>
       </select>
       <br>
       <br> <span id="title3">Choose a color: </span>
-      <input id="color" type="text" placeholder="red, blue, cyan, lightblue">
+      <input id="color" type="text" placeholder="red, blue, cyan, lightblue"> <!--creates input box-->
       <br>
       <br>
       <span id="title4">One word that describes you:</span>
-      <input id="adj" type="text" placeholder="adjective">
+      <input id="adj" type="text" placeholder="adjective"> <!--creates input box-->
     </div>
     <button>Create!</button>
-    <h1><span id="Name"></span></h1>
-    <p><span id="slogan"></span></p>
+    <h1><span id="Name"></span></h1> <!--empty h1 tag-->
+    <p><span id="slogan"></span></p> <!--empty p tag-->
   </div>
 </body>
 
